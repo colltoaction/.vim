@@ -116,3 +116,6 @@ colorscheme vividchalk
 
 " size of an "indent"
 set shiftwidth=4
+
+" backup directory to avoid having lots of tilde temp files
+set backupdir=~/.vim/backup
