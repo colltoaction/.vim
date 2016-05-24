@@ -99,6 +99,7 @@ endif
 
 " Show line numbers
 set number
+set relativenumber
 
 " http://usevim.com/2012/10/19/vim101-set-hidden/
 set hidden
