@@ -120,5 +120,8 @@ set shiftwidth=4
 " backup directory to avoid having lots of tilde temp files
 set backupdir=~/.vim/backup
 
+" FIle explorer tweaks
+let g:netrw_liststyle=3
+
 " Pathogen
 execute pathogen#infect()
