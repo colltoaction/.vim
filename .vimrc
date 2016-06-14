@@ -120,8 +120,11 @@ set shiftwidth=4
 " backup directory to avoid having lots of tilde temp files
 set backupdir=~/.vim/backup
 
-" FIle explorer tweaks
+" File explorer tweaks
 let g:netrw_liststyle=3
+
+" ctrlp marker for angular-cli project
+let g:ctrlp_root_markers = ['system-config.ts']
 
 " Pathogen
 execute pathogen#infect()
