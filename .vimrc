@@ -97,6 +97,12 @@ endif
 
 " Martín starts from here
 
+" On Windows, also use '.vim' instead of 'vimfiles'; this makes
+" synchronization across (heterogeneous) systems easier.
+if has('win32')
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
 " Show line numbers
 set number
 set relativenumber
@@ -109,7 +115,7 @@ set title
 
 " Set and configure to use new color schemes
 set t_Co=256
-colorscheme vividchalk
+colorscheme industry
 
 " Open each buffer in its own tabpage
 :au BufAdd,BufNewFile * nested tab sball
@@ -118,7 +124,7 @@ colorscheme vividchalk
 set shiftwidth=4
 
 " backup directory to avoid having lots of tilde temp files
-set backupdir=~/.vim/backup
+set backupdir=$HOME/.vim/backup
 
 " File explorer tweaks
 let g:netrw_liststyle=3
@@ -128,3 +134,18 @@ let g:ctrlp_root_markers = ['system-config.ts']
 
 " Pathogen
 execute pathogen#infect()
+
+" Useful <Leader> mappings from https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+" Save a file
+nnoremap <Leader>w :w<CR>
+" Copy & paste to system clipboard with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+" Automatically jump to end of text you pasted:
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
