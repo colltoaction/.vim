@@ -1,6 +1,6 @@
 ```bash
-cd
-echo "alias vim='vim -u ~/.vim/.vimrc'" >> .bash_aliases
-git clone https://tinchou@bitbucket.org/tinchou/.vim.git
+echo "alias vim='vim -u ~/.vim/.vimrc'" >> ~/.bash_aliases
+git clone --recursive -j8 https://github.com/tinchou/.vim.git ~/.vim
+mkdir ~/.vim/backup
+source ~/.bashrc
 ```
-
